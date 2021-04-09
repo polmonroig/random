@@ -13,7 +13,7 @@ void ExponentialGenerator::setlambda(double lambda){
 
 double ExponentialGenerator::generate() {
     auto u = UniformGenerator::generateProbability();
-    if(u == 0)u = 0.00001;
+    if(u == 0)u = MIN_E;
 
     return -mean * std::log(u);
 }

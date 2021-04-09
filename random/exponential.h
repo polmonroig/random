@@ -21,7 +21,10 @@ public:
 
 private:
 
+
     static double mean;
+
+    static constexpr double MIN_E = 0.00001;
 
 };
 
