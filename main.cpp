@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "random/uniform.h"
+#include "random/normal.h"
 #include "data/csv_file.h"
 
 
@@ -10,8 +11,8 @@ int main(int argc, char* argv []){
         return 1;
     }
     int count = std::stoi(argv[1]);
-    UniformGenerator::setSeed(3423);
-    auto numbers = UniformGenerator::generatePermutations(count);
+    UniformGenerator::setSeed(32423);
+    auto numbers = NormalGenerator::generatePermutations(count);
     CsvFile file("permutations");
     file.addRow({"Number", "Value"});
     for(auto i = 0; i < count; ++i){

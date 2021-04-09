@@ -4,7 +4,7 @@ WARN = -Wall -Wextra
 GCC = g++ $(OPT) $(STD) $(WARN)
 PROGRAM = main
 
-RANDOM = random/uniform
+RANDOM = random/uniform random/normal
 DATA = data/csv_file
 FILES = $(RANDOM) $(DATA)
 
