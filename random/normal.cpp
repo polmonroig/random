@@ -5,6 +5,15 @@
  *  =================================*/
 
 
+double NormalGenerator::average;
+double NormalGenerator::deviation;
+
+void NormalGenerator::setParameters(double mean, double standardDeviation){
+    average = mean;
+    deviation = standardDeviation;
+}
+
+
 
 double NormalGenerator::generate() {
     double s = 1;
@@ -17,6 +26,7 @@ double NormalGenerator::generate() {
     if(s == 0) return 0;
     else{
         auto x1 = v1 * std::sqrt((-2 * std::log(s)) / s);
+        x1 = deviation * x1 + average;
         return x1; // no need to calculate x2 random variable
     }
 }

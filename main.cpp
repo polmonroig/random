@@ -14,8 +14,8 @@ int main(int argc, char* argv []){
     }
     int count = std::stoi(argv[1]);
     UniformGenerator::setSeed(32423);
-    ExponentialGenerator::setlambda(1);
-    auto numbers = PoissonGenerator::generatePermutations(count);
+    NormalGenerator::setParameters(10, 5);
+    auto numbers = NormalGenerator::generatePermutations(count);
     CsvFile file("permutations");
     file.addRow({"Number", "Value"});
     for(auto i = 0; i < count; ++i){

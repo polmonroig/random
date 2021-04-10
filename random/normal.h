@@ -12,7 +12,7 @@ class NormalGenerator{
 
 public:
 
-
+    static void setParameters(double mean, double standardDeviation);
 
     static std::vector<double> generatePermutations(unsigned int size);
 
@@ -21,7 +21,8 @@ public:
 
 private:
 
-
+    static double average;
+    static double deviation;
 
 };
 
