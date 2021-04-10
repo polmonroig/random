@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "random/poisson.h"
+#include "random/gamma.h"
 #include "random/uniform.h"
 #include "random/exponential.h"
 #include "random/normal.h"
@@ -14,8 +15,11 @@ int main(int argc, char* argv []){
     }
     int count = std::stoi(argv[1]);
     UniformGenerator::setSeed(32423);
-    NormalGenerator::setParameters(10, 5);
-    auto numbers = NormalGenerator::generatePermutations(count);
+    GammaGenerator::setOrder(3);
+    GammaGenerator::setScale(5);
+    ExponentialGenerator::setlambda(1);
+
+    auto numbers = GammaGenerator::generatePermutations(count);
     CsvFile file("permutations");
     file.addRow({"Number", "Value"});
     for(auto i = 0; i < count; ++i){
