@@ -5,6 +5,9 @@
  *  =================================*/
 
 
+PoissonGenerator::PoissonGenerator(double shape){
+    exponential.setShape(shape);
+}
 
 void PoissonGenerator::setShape(double shape){
     exponential.setShape(shape);

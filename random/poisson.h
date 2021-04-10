@@ -12,7 +12,7 @@ class PoissonGenerator : public Generator{
 
 public:
 
-    PoissonGenerator();
+    PoissonGenerator(double shape=1);
 
     void setShape(double shape);
 
