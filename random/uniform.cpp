@@ -8,7 +8,7 @@
 
 
 double UniformGenerator::generate(){
-    return (generate() * 1.0) / m;
+    return (generateInteger() * 1.0) / m;
 }
 
 BigInt UniformGenerator::generateInteger() {

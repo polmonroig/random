@@ -13,9 +13,7 @@ class GammaGenerator : public Generator{
 
 public:
 
-    void setOrder(double a);
-
-    void setScale(double s);
+    GammaGenerator(double a=1, double s=1);
 
     double generate();
 

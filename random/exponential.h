@@ -12,6 +12,8 @@ class ExponentialGenerator : public Generator{
 
 public:
 
+    ExponentialGenerator(double lambda=1);
+
     void setShape(double lambda);
 
     double generate();

@@ -5,10 +5,13 @@
  *  =================================*/
 
 
-void ExponentialGenerator::setShape(double lambda){
+ExponentialGenerator::ExponentialGenerator(double lambda){
     mean = 1.0 / lambda;
 }
 
+void ExponentialGenerator::setShape(double lambda){
+    mean = 1.0 / lambda;
+}
 
 double ExponentialGenerator::generate() {
     auto u = uniform.generate();

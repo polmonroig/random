@@ -5,12 +5,10 @@
  *  =================================*/
 
 
-void GammaGenerator::setOrder(double a){
+GammaGenerator::GammaGenerator(double a, double s){
     order = a;
-}
-
-void GammaGenerator::setScale(double s){
     scale = s;
+    exponential.setShape(order);
 }
 
 double GammaGenerator::generate() {

@@ -10,10 +10,10 @@ int main(int argc, char* argv []){
         return 1;
     }
     int count = std::stoi(argv[1]);
-    NormalGenerator generator;
+    GammaGenerator generator(150, 1);
     generator.setSeed(43243);
-
     auto numbers = generator.generatePermutations(count);
+
     CsvFile file("permutations");
     file.addRow({"Number", "Value"});
     for(auto i = 0; i < count; ++i){
