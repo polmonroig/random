@@ -1,13 +1,9 @@
 #ifndef UNIFORM_GENERATOR_H
 #define UNIFORM_GENERATOR_H
 
+#include "generator.h"
 
-#include <vector>
 
-/**
-  * @typedef type definition for a really big unsigned int
-  * */
-typedef long long unsigned int BigInt;
 
 
 /**
@@ -19,43 +15,26 @@ typedef long long unsigned int BigInt;
  *        D. H . Lehmer (Cambridge, Mass.: Harvard University Press, 1951[141-146])
  *
  * */
-class UniformGenerator {
+class UniformGenerator : public Generator{
 
 public:
 
-    /**
-     * @brief setter for the initial number
-     * @param s is the starting number
-     * */
-    static void setSeed(BigInt s);
-
-    /**
+     /**
      * @brief generates a probability between 0 and 1
      * @returns a number between 0 and 1
      * */
-    static float generateProbability();
+    double generate();
 
     /**
      * @brief generate a random number based on a seed
-     * @param seed is the starting number
      * @returns the next number in the sequence
      * */
-    static BigInt generate();
+    BigInt generateInteger();
 
-    /**
-     *  @brief generate a random sequence of numbers
-     *  @param seed is the starting number in the sequence
-     *  @param size is the size of the sequence
-     *  @returns the sequence of integers
-     * */
-    static std::vector<BigInt> generatePermutations(unsigned int size);
 
 private:
 
-    /**
-     * @brief the modulus of the formula
-     * */
-    static BigInt seed;
+
 
     /**
      * @brief the modulus of the formula

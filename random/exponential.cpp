@@ -4,24 +4,21 @@
  *               PUBLIC
  *  =================================*/
 
-double ExponentialGenerator::mean;
 
-void ExponentialGenerator::setlambda(double lambda){
+void ExponentialGenerator::setShape(double lambda){
     mean = 1.0 / lambda;
 }
 
 
 double ExponentialGenerator::generate() {
-    auto u = UniformGenerator::generateProbability();
+    auto u = uniform.generate();
     if(u == 0)u = MIN_E;
 
     return -mean * std::log(u);
 }
 
-std::vector<double> ExponentialGenerator::generatePermutations(unsigned int size) {
-    std::vector<double> sequence(size);
-    for(auto & element : sequence){
-        element = generate();
-    }
-    return sequence;
+
+
+void ExponentialGenerator::setSeed(BigInt seed){
+    uniform.setSeed(seed);
 }

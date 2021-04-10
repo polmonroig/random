@@ -2,17 +2,47 @@
 #define RAND_GENERATOR
 
 
+#include <vector>
+#include <cmath>
+
+/**
+  * @typedef type definition for a really big unsigned int
+  * */
+typedef long long unsigned int BigInt;
+
 class Generator{
 
 public:
 
-    Generator() = delete; // Remove constructor, abstract class
 
-    
+    /**
+     *  @brief generate a random sequence of numbers
+     *  @param size is the size of the sequence
+     *  @returns the sequence of deviates
+     * */
+    std::vector<double> generatePermutations(unsigned int size);
 
-private:
+    /**
+     * @brief generate a random number
+     * @returns a random number based on a specific distribution
+     * */
+    virtual double generate() = 0;
 
-}
+
+    /**
+     * @brief setter for the initial number
+     * @param s is the starting number
+     * */
+    void setSeed(BigInt seed);
+
+
+    /**
+     * @brief the modulus of the formula
+     * */
+    BigInt seed;
+
+
+};
 
 
 #endif

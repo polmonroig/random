@@ -5,26 +5,14 @@
  *               PUBLIC
  *  =================================*/
 
-BigInt UniformGenerator::seed;
 
-void UniformGenerator::setSeed(BigInt s){
-    seed = s;
-}
 
-float UniformGenerator::generateProbability(){
+double UniformGenerator::generate(){
     return (generate() * 1.0) / m;
 }
 
-BigInt UniformGenerator::generate() {
+BigInt UniformGenerator::generateInteger() {
     auto r = (seed * a + c) % m;
     seed = r;
     return r;
-}
-
-std::vector<BigInt> UniformGenerator::generatePermutations(unsigned int size) {
-    std::vector<BigInt> sequence(size);
-    for(auto & element : sequence){
-        element = generate();
-    }
-    return sequence;
 }

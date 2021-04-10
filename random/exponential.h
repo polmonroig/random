@@ -1,28 +1,28 @@
 #ifndef EXPONENTIAL_GENERATOR_H
 #define EXPONENTIAL_GENERATOR_H
 
-#include <cmath>
 
+#include "generator.h"
 #include "uniform.h"
 
 
-class ExponentialGenerator{
+class ExponentialGenerator : public Generator{
 
 
 
 public:
 
-    static void setlambda(double lambda);
+    void setShape(double lambda);
 
-    static std::vector<double> generatePermutations(unsigned int size);
+    double generate();
 
-    static double generate();
-
+    void setSeed(BigInt seed);
 
 private:
 
+    UniformGenerator uniform;
 
-    static double mean;
+    double mean;
 
     static constexpr double MIN_E = 0.00001;
 

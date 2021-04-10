@@ -1,33 +1,35 @@
 #ifndef GAMMA_GENERATOR_H
 #define GAMMA_GENERATOR_H
 
-#include <cmath>
 
+#include "generator.h"
 #include "uniform.h"
 #include "exponential.h"
 
 
-class GammaGenerator{
+class GammaGenerator : public Generator{
 
 
 
 public:
 
-    static void setOrder(double a);
+    void setOrder(double a);
 
-    static void setScale(double s);
+    void setScale(double s);
 
-    static std::vector<double> generatePermutations(unsigned int size);
+    double generate();
 
-    static double generate();
-
+    void setSeed(BigInt seed);
 
 private:
 
+    ExponentialGenerator exponential;
+    UniformGenerator uniform;
 
-    static double order;
 
-    static double scale;
+    double order;
+
+    double scale;
 
     static constexpr double MIN_E = 0.00001;
 

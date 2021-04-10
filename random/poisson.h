@@ -1,23 +1,30 @@
 #ifndef POISSON_GENERATOR_H
 #define POISSON_GENERATOR_H
 
-#include <cmath>
 
+#include "generator.h"
 #include "exponential.h"
 
 
-class PoissonGenerator{
+class PoissonGenerator : public Generator{
 
 
 
 public:
 
-    static void setlambda(double lambda);
+    PoissonGenerator();
 
-    static std::vector<double> generatePermutations(unsigned int size);
+    void setShape(double shape);
 
-    static double generate();
+    double generate() ;
 
+
+    void setSeed(BigInt seed);
+
+
+private:
+
+    ExponentialGenerator exponential;
 
 
 };

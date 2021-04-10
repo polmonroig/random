@@ -1,28 +1,35 @@
 #ifndef NORMAL_GENERATOR_H
 #define NORMAL_GENERATOR_H
 
-#include <cmath>
 
+#include "generator.h"
 #include "uniform.h"
 
 
-class NormalGenerator{
+class NormalGenerator : public Generator{
 
 
 
 public:
 
-    static void setParameters(double mean, double standardDeviation);
 
-    static std::vector<double> generatePermutations(unsigned int size);
+    NormalGenerator(double mean=0, double standardDeviation=1);
 
-    static double generate();
+
+    double generate();
+
+    void setSeed(BigInt seed);
 
 
 private:
 
-    static double average;
-    static double deviation;
+    UniformGenerator uniform;
+
+    bool hasAlternative;
+    double alternativeDeviate;
+
+    double average;
+    double deviation;
 
 };
 
