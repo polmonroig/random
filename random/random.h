@@ -6,6 +6,6 @@
 #include "uniform.h"
 #include "exponential.h"
 #include "normal.h"
-
+#include "chi-square.h"
 
 #endif

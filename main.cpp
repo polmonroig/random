@@ -10,7 +10,7 @@ int main(int argc, char* argv []){
         return 1;
     }
     int count = std::stoi(argv[1]);
-    PoissonGenerator generator(3);
+    ChiSquareGenerator generator(3);
     generator.setSeed(43243);
     auto numbers = generator.generatePermutations(count);
 

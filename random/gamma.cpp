@@ -11,6 +11,10 @@ GammaGenerator::GammaGenerator(double a, double s){
     exponential.setShape(order);
 }
 
+void GammaGenerator::setOrder(double a){
+    order = a;
+}
+
 double GammaGenerator::generate() {
     if(order == 1){
         return exponential.generate() * scale;

@@ -1,10 +1,10 @@
 STD = -std=c++2a
-OPT = -O2
+OPT = -O3
 WARN = -Wall -Wextra
 GCC = g++ $(OPT) $(STD) $(WARN)
 PROGRAM = main
 
-RANDOM = $(addprefix random/, uniform normal exponential poisson gamma generator)
+RANDOM = $(addprefix random/, uniform normal exponential poisson gamma generator chi-square)
 DATA = data/csv_file
 FILES = $(RANDOM) $(DATA)
 

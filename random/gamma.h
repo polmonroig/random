@@ -15,6 +15,8 @@ public:
 
     GammaGenerator(double a=1, double s=1);
 
+    void setOrder(double a);
+
     double generate();
 
     void setSeed(BigInt seed);

@@ -10,6 +10,13 @@
   * */
 typedef long long unsigned int BigInt;
 
+
+/**
+ * @class Generator
+ * @brief A generator explains a set of different distributions
+ *        from which the generator can yield variates.
+ *
+ * */
 class Generator{
 
 public:
@@ -37,7 +44,7 @@ public:
 
 
     /**
-     * @brief the modulus of the formula
+     * @brief the seed of the generators
      * */
     BigInt seed;
 
