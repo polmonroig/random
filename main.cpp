@@ -10,15 +10,17 @@ int main(int argc, char* argv []){
         return 1;
     }
     int count = std::stoi(argv[1]);
-    BetaGenerator generator(0.5, 0.5);
+    StudentTGenerator generator(5);
     generator.setSeed(43243);
+    std::cout << "Generating numbers" << std::endl;
     auto numbers = generator.generatePermutations(count);
-
+    std::cout << "Generating CSV" << std::endl;
     CsvFile file("permutations");
     file.addRow({"Number", "Value"});
     for(auto i = 0; i < count; ++i){
         file.addRow({std::to_string(i), std::to_string(numbers[i])});
     }
+    std::cout << "Saving" << std::endl;
     file.write();
     return 0;
 }

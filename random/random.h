@@ -8,5 +8,6 @@
 #include "normal.h"
 #include "chi-square.h"
 #include "beta.h"
+#include "student-t.h"
 
 #endif
