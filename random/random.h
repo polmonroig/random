@@ -10,5 +10,6 @@
 #include "beta.h"
 #include "student-t.h"
 #include "geometric.h"
+#include "binomial.h"
 
 #endif
