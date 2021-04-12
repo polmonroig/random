@@ -10,7 +10,7 @@ int main(int argc, char* argv []){
         return 1;
     }
     int count = std::stoi(argv[1]);
-    ChiSquareGenerator generator(3);
+    BetaGenerator generator(2, 2);
     generator.setSeed(43243);
     auto numbers = generator.generatePermutations(count);
 

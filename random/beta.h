@@ -20,10 +20,11 @@ public:
 
 private:
 
-    GammaGenerator gamma;
+    GammaGenerator alphaGenerator;
+    GammaGenerator betaGenerator;
 
     double alpha;
-    double beta; 
+    double beta;
 
 };
 

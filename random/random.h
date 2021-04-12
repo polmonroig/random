@@ -7,5 +7,6 @@
 #include "exponential.h"
 #include "normal.h"
 #include "chi-square.h"
+#include "beta.h"
 
 #endif
