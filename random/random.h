@@ -9,5 +9,6 @@
 #include "chi-square.h"
 #include "beta.h"
 #include "student-t.h"
+#include "geometric.h"
 
 #endif

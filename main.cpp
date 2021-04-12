@@ -10,7 +10,7 @@ int main(int argc, char* argv []){
         return 1;
     }
     int count = std::stoi(argv[1]);
-    StudentTGenerator generator(5);
+    GeometricGenerator generator(0.8);
     generator.setSeed(43243);
     std::cout << "Generating numbers" << std::endl;
     auto numbers = generator.generatePermutations(count);
