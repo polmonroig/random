@@ -22,9 +22,13 @@ private:
 
     GammaGenerator alphaGenerator;
     GammaGenerator betaGenerator;
+    GammaGenerator uniform;
 
     double alpha;
     double beta;
+
+    double alphaPow;
+    double betaPow;
 
 };
 

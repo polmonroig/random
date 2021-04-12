@@ -6,7 +6,7 @@
 
 
 ExponentialGenerator::ExponentialGenerator(double lambda){
-    mean = 1.0 / lambda;
+    setShape(lambda);
 }
 
 void ExponentialGenerator::setShape(double lambda){

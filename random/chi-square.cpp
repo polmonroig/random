@@ -6,8 +6,7 @@
 
 
  ChiSquareGenerator::ChiSquareGenerator(unsigned int freedomDegrees){
-     degrees = freedomDegrees;
-     gamma.setOrder(float(degrees) / 2.0);
+     setDegrees(freedomDegrees);
  }
 
  void ChiSquareGenerator::setDegrees(unsigned int freedomDegrees){

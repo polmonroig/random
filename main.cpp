@@ -10,7 +10,7 @@ int main(int argc, char* argv []){
         return 1;
     }
     int count = std::stoi(argv[1]);
-    BetaGenerator generator(2, 2);
+    BetaGenerator generator(0.5, 0.5);
     generator.setSeed(43243);
     auto numbers = generator.generatePermutations(count);
 
